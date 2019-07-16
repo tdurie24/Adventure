@@ -1,0 +1,12 @@
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\bin\Debug\netstandard2.0\Adventure.Services.deps.json
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\bin\Debug\netstandard2.0\Adventure.Services.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\bin\Debug\netstandard2.0\Adventure.Services.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\bin\Debug\netstandard2.0\Adventure.Contracts.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\bin\Debug\netstandard2.0\Adventure.Contracts.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.csprojAssemblyReference.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.csproj.CoreCompileInputs.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.AssemblyInfoInputs.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.AssemblyInfo.cs
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.csproj.CopyComplete
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Services\obj\Debug\netstandard2.0\Adventure.Services.pdb

@@ -12,3 +12,8 @@ C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\obj\Debug
 C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\obj\Debug\netcoreapp2.2\Adventure.Web.API.RazorTargetAssemblyInfo.cache
 C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\obj\Debug\netcoreapp2.2\Adventure.Web.API.dll
 C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\obj\Debug\netcoreapp2.2\Adventure.Web.API.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\bin\Debug\netcoreapp2.2\Adventure.Data.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\bin\Debug\netcoreapp2.2\Adventure.Domain.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\bin\Debug\netcoreapp2.2\Adventure.Data.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\bin\Debug\netcoreapp2.2\Adventure.Domain.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Web.API\obj\Debug\netcoreapp2.2\Adventure.Web.API.csproj.CopyComplete

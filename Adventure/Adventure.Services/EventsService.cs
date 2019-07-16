@@ -5,7 +5,7 @@ using Adventure.Contracts.Models;
 
 namespace Adventure.Services
 {
-    public class EventsService : IEvents
+    public class EventsService : IEventsServices
     {
         public Task CreateEvent(Event e)
         {

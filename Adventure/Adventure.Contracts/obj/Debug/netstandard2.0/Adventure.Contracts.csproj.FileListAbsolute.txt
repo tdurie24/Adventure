@@ -1,0 +1,9 @@
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\bin\Debug\netstandard2.0\Adventure.Contracts.deps.json
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\bin\Debug\netstandard2.0\Adventure.Contracts.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\bin\Debug\netstandard2.0\Adventure.Contracts.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\obj\Debug\netstandard2.0\Adventure.Contracts.csprojAssemblyReference.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\obj\Debug\netstandard2.0\Adventure.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\obj\Debug\netstandard2.0\Adventure.Contracts.AssemblyInfoInputs.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\obj\Debug\netstandard2.0\Adventure.Contracts.AssemblyInfo.cs
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\obj\Debug\netstandard2.0\Adventure.Contracts.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Contracts\obj\Debug\netstandard2.0\Adventure.Contracts.pdb

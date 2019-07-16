@@ -1,0 +1,9 @@
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Domain.csprojAssemblyReference.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Domain.AssemblyInfoInputs.cache
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Domain.AssemblyInfo.cs
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\bin\Debug\netstandard2.0\Adventure.Domain.deps.json
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\bin\Debug\netstandard2.0\Adventure.Domain.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\bin\Debug\netstandard2.0\Adventure.Domain.pdb
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Domain.dll
+C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Domain.pdb

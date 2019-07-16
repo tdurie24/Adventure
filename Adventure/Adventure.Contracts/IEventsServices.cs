@@ -6,7 +6,7 @@ using Adventure.Contracts.Models;
 
 namespace Adventure.Contracts
 {
-    public interface IEvents
+    public interface IEventsServices
     {
         Task<Event[]> GetEvents();
         Task<Event[]> GetEventsByLocation(Location location);
