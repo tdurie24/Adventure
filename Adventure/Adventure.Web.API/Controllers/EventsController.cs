@@ -21,10 +21,13 @@ namespace Adventure.Web.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(EventDto eventModel)
+        public async Task<IActionResult> Post([FromBody] EventDto eventModel)
         {
             try
             {
+                if(eventModel == null){
+                   return BadRequest();
+                }
                 var eventID = await this.eventsServices.CreateEvent(eventModel);
                 return !string.IsNullOrWhiteSpace(eventID) ? Ok(eventID) : (IActionResult)NotFound();
 
