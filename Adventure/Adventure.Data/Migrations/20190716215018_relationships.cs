@@ -5,6 +5,10 @@ namespace Adventure.Data.Migrations
 {
     public partial class relationships : Migration
     {
+        /// <summary>
+        /// Ups the specified migration builder.
+        /// </summary>
+        /// <param name="migrationBuilder">The migration builder.</param>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(

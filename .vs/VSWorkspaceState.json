@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Adventure",
+    "\\Adventure\\Adventure.Data",
+    "\\Adventure\\Adventure.Repository"
   ],
-  "SelectedNode": "\\Adventure",
+  "SelectedNode": "\\Adventure\\Adventure.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -4,6 +4,65 @@
     "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Web.API\\Adventure.Web.API.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj",
+        "projectName": "Adventure.Contracts",
+        "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Teddy Duri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Teddy Duri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Data\\Adventure.Data.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,7 +85,8 @@
           "netstandard2.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -64,7 +124,12 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true
@@ -93,7 +158,8 @@
           "netstandard2.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -117,7 +183,82 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Services\\Adventure.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Services\\Adventure.Services.csproj",
+        "projectName": "Adventure.Services",
+        "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Services\\Adventure.Services.csproj",
+        "packagesPath": "C:\\Users\\Teddy Duri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Teddy Duri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj": {
+                "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj"
+              },
+              "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Data\\Adventure.Data.csproj": {
+                "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Data\\Adventure.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true
@@ -146,16 +287,23 @@
           "netcoreapp2.2"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
+              "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj": {
+                "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Contracts\\Adventure.Contracts.csproj"
+              },
               "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Data\\Adventure.Data.csproj": {
                 "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Data\\Adventure.Data.csproj"
               },
               "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Repository\\Adventure.Domain.csproj": {
                 "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Repository\\Adventure.Domain.csproj"
+              },
+              "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Services\\Adventure.Services.csproj": {
+                "projectPath": "C:\\Users\\Teddy Duri\\source\\repos\\Adventure\\Adventure\\Adventure.Services\\Adventure.Services.csproj"
               }
             }
           }
@@ -169,6 +317,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -190,13 +346,22 @@
               "target": "Package",
               "version": "[2.2.3, )"
             },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[4.5.0, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true
