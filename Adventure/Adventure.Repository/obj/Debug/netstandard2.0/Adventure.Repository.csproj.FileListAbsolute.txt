@@ -1,6 +1,0 @@
-C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\bin\Debug\netstandard2.0\Adventure.Repository.deps.json
-C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\bin\Debug\netstandard2.0\Adventure.Repository.dll
-C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Repository.csprojAssemblyReference.cache
-C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Repository.csproj.CoreCompileInputs.cache
-C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Repository.AssemblyInfoInputs.cache
-C:\Users\Teddy Duri\source\repos\Adventure\Adventure\Adventure.Repository\obj\Debug\netstandard2.0\Adventure.Repository.AssemblyInfo.cs
