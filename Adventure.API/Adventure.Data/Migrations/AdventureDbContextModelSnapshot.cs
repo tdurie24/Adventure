@@ -100,6 +100,54 @@ namespace Adventure.Data.Migrations
                     b.ToTable("GeoCoordinates");
                 });
 
+            modelBuilder.Entity("Adventure.Domain.Entities.Holiday", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateFrom");
+
+                    b.Property<DateTime>("DateTo");
+
+                    b.Property<DateTime>("DateUpdated");
+
+                    b.Property<Guid?>("HolidayTypeId");
+
+                    b.Property<Guid?>("LocationId");
+
+                    b.Property<string>("LongDescription");
+
+                    b.Property<string>("Name");
+
+                    b.Property<Guid?>("PriceId");
+
+                    b.Property<string>("ShortDescription");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HolidayTypeId");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("PriceId");
+
+                    b.ToTable("Holidays");
+                });
+
+            modelBuilder.Entity("Adventure.Domain.Entities.HolidayType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HolidayTypes");
+                });
+
             modelBuilder.Entity("Adventure.Domain.Entities.Image", b =>
                 {
                     b.Property<Guid>("Id")
@@ -107,9 +155,13 @@ namespace Adventure.Data.Migrations
 
                     b.Property<string>("Base64");
 
+                    b.Property<Guid?>("HolidayId");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HolidayId");
 
                     b.ToTable("Images");
                 });
@@ -178,6 +230,28 @@ namespace Adventure.Data.Migrations
                         .WithMany()
                         .HasForeignKey("ImageId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Adventure.Domain.Entities.Holiday", b =>
+                {
+                    b.HasOne("Adventure.Domain.Entities.HolidayType", "HolidayType")
+                        .WithMany()
+                        .HasForeignKey("HolidayTypeId");
+
+                    b.HasOne("Adventure.Domain.Entities.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId");
+
+                    b.HasOne("Adventure.Domain.Entities.Price", "Price")
+                        .WithMany()
+                        .HasForeignKey("PriceId");
+                });
+
+            modelBuilder.Entity("Adventure.Domain.Entities.Image", b =>
+                {
+                    b.HasOne("Adventure.Domain.Entities.Holiday")
+                        .WithMany("Images")
+                        .HasForeignKey("HolidayId");
                 });
 
             modelBuilder.Entity("Adventure.Domain.Entities.Location", b =>

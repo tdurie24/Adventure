@@ -10,7 +10,7 @@ namespace Adventure.Web.API.Controllers
 {
 
 
-    [Route("events")]
+    [Route("api/events")]
     [ApiController]
     public class EventsController : Controller
     {

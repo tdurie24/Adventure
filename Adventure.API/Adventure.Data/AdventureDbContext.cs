@@ -17,6 +17,8 @@ namespace Adventure.Data
         public DbSet<Location> Locations { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Price> Prices { get; set; }
+        public DbSet<Holiday> Holidays { get; set; }
+        public DbSet<HolidayType> HolidayTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

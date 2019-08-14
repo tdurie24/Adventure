@@ -33,6 +33,7 @@ namespace Adventure.Web.API
             var mappingConfig = new MapperConfiguration(mc => mc.AddProfile(new MappingProfile()));
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddTransient<IEventsServices, EventsService>();
+            services.AddTransient<IHolidaysService, HolidaysService>();
             services.AddSingleton(mapper);
             services.AddMvc();
             services.AddDbContext<AdventureDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("AdventureConection")));

@@ -13,6 +13,9 @@ namespace Adventure.Web.API.Services
         public MappingProfile()
         {
             CreateMap<Event, EventDto>();
+            CreateMap<EventDto, Event>();
+            CreateMap<HolidayDto, Holiday>();
+            CreateMap<Holiday, HolidayDto>();
         }
     }
 }
