@@ -8,6 +8,7 @@ using Adventure.Contracts.Models;
 using Adventure.Data;
 using Adventure.Domain.Entities;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace Adventure.Services
 {
@@ -54,7 +55,7 @@ namespace Adventure.Services
             try
             {
                var holidayDtos = new List<HolidayDto>();
-               var holidays = dbContext.Holidays.ToList();
+               var holidays = await dbContext.Holidays.ToListAsync().ConfigureAwait(false);
                 foreach (var model in this.mapper.Map<List<HolidayDto>>(holidays))
                 {
                     holidayDtos.Add(model);
