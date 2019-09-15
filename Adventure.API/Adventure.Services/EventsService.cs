@@ -7,6 +7,7 @@ using Adventure.Contracts.Models;
 using Adventure.Data;
 using Adventure.Domain.Entities;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace Adventure.Services
 {
@@ -41,7 +42,7 @@ namespace Adventure.Services
             try
             {
                 List<EventDto> eventDtos = new List<EventDto>();
-                List<Event> events = dbContext.Events.ToList();
+                List<Event> events = await dbContext.Events.ToListAsync().ConfigureAwait(false);
                 foreach (var model in this.mapper.Map<List<EventDto>>(events))
                 {
                     eventDtos.Add(model);
