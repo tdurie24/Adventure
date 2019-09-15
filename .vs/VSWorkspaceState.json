@@ -1,3 +1,9 @@
 {
+  "ExpandedNodes": [
+    "",
+    "\\Adventure.API\\Adventure.Web.API",
+    "\\Adventure.Mobile"
+  ],
+  "SelectedNode": "\\Adventure.Mobile\\Adventure.Mobile.sln",
   "PreviewInSolutionExplorer": false
 }
