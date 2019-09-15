@@ -22,14 +22,18 @@ namespace Adventure.Mobile
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("/NavigationPage/MainPage");
         }
 
+        //
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<TestPage2, TestPage2ViewModel>();
+            containerRegistry.RegisterForNavigation<TestPage3, TestPage3ViewModel>();
         }
     }
 }
