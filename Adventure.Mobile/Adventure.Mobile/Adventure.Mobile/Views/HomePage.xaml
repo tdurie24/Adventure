@@ -5,6 +5,6 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Adventure.Mobile.Views.HomePage">
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
-        <Label Text="Test Page 1" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Label Text="Test Page 2" VerticalOptions="Center" HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>

@@ -43,6 +43,7 @@ namespace Adventure.Mobile
 
             // Initial navigation, this can be used for our home page
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage)));
+            
         }
 
         // Event for Menu Item selection, here we are going to handle navigation based
@@ -52,8 +53,8 @@ namespace Adventure.Mobile
 
             var item = (MasterPageItem)e.SelectedItem;
             Type page = item.TargetType;
-
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+           
             IsPresented = false;
         }
     }

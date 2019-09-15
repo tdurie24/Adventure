@@ -3,7 +3,8 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
                   prism:ViewModelLocator.AutowireViewModel="True"
-                  x:Class="Adventure.Mobile.MainPage">
+                  x:Class="Adventure.Mobile.MainPage"
+                  NavigationPage.HasNavigationBar="False">
 
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
@@ -14,7 +15,7 @@
              data that you want to have in your menu drawer
         -->
                 <StackLayout BackgroundColor="#e74c3c"
-                     HeightRequest="255">
+                     HeightRequest="100">
 
                     <Label Text="Some Text title"
                  FontSize="20"
