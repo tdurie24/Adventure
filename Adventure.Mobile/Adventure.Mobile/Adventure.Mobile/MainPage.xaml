@@ -17,7 +17,7 @@
                 <StackLayout BackgroundColor="#e74c3c"
                      HeightRequest="100">
 
-                    <Label Text="Some Text title"
+                    <Label Text="Adventure P"
                  FontSize="20"
                  VerticalOptions="CenterAndExpand"
                  TextColor="White"
