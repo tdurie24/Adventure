@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Adventure.Mobile.MenuItems;
 using Adventure.Mobile.Views;
+using Adventure.Mobile.Views.Home;
 using Xamarin.Forms;
 
 namespace Adventure.Mobile
