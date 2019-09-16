@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using Adventure.Mobile.Models;
 using Adventure.Mobile.ViewModels.Home;
 using Xamarin.Forms;
 
@@ -12,107 +13,78 @@ namespace Adventure.Mobile.Views.Home
         {
             InitializeComponent();
             VM = new HomePageViewModel();
-            VM.Sections = new ObservableCollection<Section>
+            VM.Sections = new ObservableCollection<FeaturedHolidaysModel>
             {
-                new Section
+                new FeaturedHolidaysModel
                 {
-                    Header = "Thank you for participating in the CarouselView Challenge!",
-                    Content = new FormattedString
-                    {
-                        Spans =
-                        {
-                            new Span
-                            {
-                                Text = "Your feedback is highly valuable for helping to drive CarouselView's development and highlight functionality you need most." + Environment.NewLine + Environment.NewLine
-                            },
-                            new Span
-                            {
-                                Text = "(This is a CarouselView, so swipe to the left to keep reading!)",
-                                FontAttributes = FontAttributes.Italic
-                            }
-                        }
-                    }
+                    Name= "The Pavilion Hotel",
+                    City = "Durban",
+                    ShortDescription="This property is ideally situated minutes away from Durban's iconic beach front and promenade",
+                    DateFrom ="01 October 2019",
+                    DateTo = "30 November",
+                    Price = "R3,350",
+                    Image = "https://media-cdn.tripadvisor.com/media/photo-s/03/93/82/40/pavilion-hotel.jpg"
+                    
+                    //Header = "Thank you for participating in the CarouselView Challenge!",
+                    //Content = new FormattedString
+                    //{
+                    //    Spans =
+                    //    {
+                    //        new Span
+                    //        {
+                    //            Text = "Your feedback is highly valuable for helping to drive CarouselView's development and highlight functionality you need most." + Environment.NewLine + Environment.NewLine
+                    //        },
+                    //        new Span
+                    //        {
+                    //            Text = "(This is a CarouselView, so swipe to the left to keep reading!)",
+                    //            FontAttributes = FontAttributes.Italic
+                    //        }
+                    //    }
+                    //}
                 },
-                new Section
+                new FeaturedHolidaysModel
                 {
-                    Header = "What to Do",
-                    Content = new FormattedString
-                    {
-                        Spans =
-                        {
-                            new Span
-                            {
-                                Text = "Pick an app and reproduce a part of it where you can use the CarouselView." + Environment.NewLine + Environment.NewLine
-                            },
-                            new Span
-                            {
-                                Text = "This could be part of an app you've developed using Xamarin.Forms, or anything you'd like. Your choice!"
-                            }
-                        }
-                    }
+                    Name= "The Pavilion Hotel",
+                    City = "Durban",
+                    ShortDescription="This property is ideally situated minutes away from Durban's iconic beach front and promenade",
+                    DateFrom ="01 October 2019",
+                    DateTo = "30 November",
+                    Price = "R3,350",
+                    Image = "https://www.flightcentre.co.za/sites/default/files/styles/product-200x200/global/product-images/Durban_Light_House_shutterstock_91925297200-e8a005d004ba5b391e75ad40e47a3e1a.jpg?itok=U6rT1Ha1"
+
                 },
-                new Section
+                new FeaturedHolidaysModel
                 {
-                    Header = "Create a PR and Give Feedback",
-                    Content = new FormattedString
-                    {
-                        Spans =
-                        {
-                            new Span
-                            {
-                                Text = "When you're finished, open a PR with your work, and feel free to share screenshots." + Environment.NewLine + Environment.NewLine
-                            },
-                            new Span
-                            {
-                                Text = "If you participated in the CollectionView Challenge, you'll be familiar with the feedback we'd like you to provide:"
-                            }
-                        }
-                    }
+                    Name= "The Pavilion Hotel",
+                    City = "Durban",
+                    ShortDescription="This property is ideally situated minutes away from Durban's iconic beach front and promenade",
+                    DateFrom ="01 October 2019",
+                    DateTo = "30 November",
+                    Price = "R3,350",
+                    Image = "https://www.flightcentre.co.za/sites/default/files/styles/product-200x200/global/product-images/Durban_Light_House_shutterstock_91925297200-e8a005d004ba5b391e75ad40e47a3e1a.jpg?itok=U6rT1Ha1"
+
                 },
-                new Section
+                new FeaturedHolidaysModel
                 {
-                    Header = "1. What went well?",
-                    Content = new FormattedString
-                    {
-                        Spans =
-                        {
-                            new Span
-                            {
-                                Text = "Was the CarouselView easy to use? Were you able to accomplish what you set out to?" + Environment.NewLine + Environment.NewLine
-                            }
-                        }
-                    },
-                    Emoji = "😀"
+                    Name= "The Pavilion Hotel",
+                    City = "Durban",
+                    ShortDescription="This property is ideally situated minutes away from Durban's iconic beach front and promenade",
+                    DateFrom ="01 October 2019",
+                    DateTo = "30 November",
+                    Price = "R3,350",
+                    Image = "https://www.flightcentre.co.za/sites/default/files/styles/product-200x200/global/product-images/Durban_Light_House_shutterstock_91925297200-e8a005d004ba5b391e75ad40e47a3e1a.jpg?itok=U6rT1Ha1"
+
                 },
-                new Section
+                new FeaturedHolidaysModel
                 {
-                    Header = "2. What didn't go well?",
-                    Content = new FormattedString
-                    {
-                        Spans =
-                        {
-                            new Span
-                            {
-                                Text = "Be as honest and detailed as possible." + Environment.NewLine + Environment.NewLine
-                            }
-                        }
-                    },
-                    Emoji = "🙁"
-                },
-                new Section
-                {
-                    Header = "3. What's missing?",
-                    Content = new FormattedString
-                    {
-                        Spans =
-                        {
-                            new Span
-                            {
-                                Text = "Let us know about any functionality you didn't have access to and its impact on you, or anything else you'd like to see." + Environment.NewLine + Environment.NewLine
-                            }
-                        }
-                    },
-                    Emoji = "🤔"
+                   Name= "The Pavilion Hotel",
+                    City = "Durban",
+                    ShortDescription="This property is ideally situated minutes away from Durban's iconic beach front and promenade",
+                    DateFrom ="01 October 2019",
+                    DateTo = "30 November",
+                    Price = "R3,350",
+                    Image = "https://www.flightcentre.co.za/sites/default/files/styles/product-200x200/global/product-images/Durban_Light_House_shutterstock_91925297200-e8a005d004ba5b391e75ad40e47a3e1a.jpg?itok=U6rT1Ha1"
+
                 },
             };
             BindingContext = VM;

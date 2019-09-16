@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Adventure.Mobile.Models;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Adventure.Mobile.ViewModels.Home
 
     public class HomePageViewModel : BindableBase, INotifyPropertyChanged
     {
+       
         public HomePageViewModel()
         {
 
@@ -19,8 +21,8 @@ namespace Adventure.Mobile.ViewModels.Home
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ObservableCollection<Section> _sections;
-        public ObservableCollection<Section> Sections
+        private ObservableCollection<FeaturedHolidaysModel> _sections;
+        public ObservableCollection<FeaturedHolidaysModel> Sections
         {
             get
             {
@@ -41,10 +43,10 @@ namespace Adventure.Mobile.ViewModels.Home
         }
     }
 
-    public class Section
-    {
-        public string Header { get; set; }
-        public FormattedString Content { get; set; }
-        public string Emoji { get; set; }
-    };
+    //public class Section
+    //{
+    //    public string Header { get; set; }
+    //    public FormattedString Content { get; set; }
+    //    public string Emoji { get; set; }
+    //};
 }
