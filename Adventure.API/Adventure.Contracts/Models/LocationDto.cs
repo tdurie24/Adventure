@@ -7,7 +7,7 @@ namespace Adventure.Contracts.Models
 {
     public class LocationDto
     {
-        public Guid LocationId { get; set; }
+        public Guid Id { get; set; }
         public string Surburb { get; set; }
         public string Town { get; set; }
         public string  Province { get; set; }

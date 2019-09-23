@@ -55,7 +55,7 @@ namespace Adventure.Services
             try
             {
                var holidayDtos = new List<HolidayDto>();
-               var holidays = await dbContext.Holidays.ToListAsync().ConfigureAwait(false);
+               var holidays = await dbContext.Holidays.Include(i=> i.Images).Include(l=> l.Location).Include(p=> p.Price).Include(h=>h.HolidayType).ToListAsync().ConfigureAwait(false);
                 foreach (var model in this.mapper.Map<List<HolidayDto>>(holidays))
                 {
                     holidayDtos.Add(model);

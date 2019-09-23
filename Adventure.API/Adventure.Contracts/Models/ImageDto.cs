@@ -7,8 +7,9 @@ namespace Adventure.Contracts.Models
 { 
     public class ImageDto
     {
-        public Guid ImagesId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Base64 { get; set; }
+        public string SourceURL { get; set; }
     }
 }
