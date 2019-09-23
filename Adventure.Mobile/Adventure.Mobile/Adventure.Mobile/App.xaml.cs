@@ -4,6 +4,8 @@ using Adventure.Mobile.ViewModels;
 using Adventure.Mobile.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Adventure.Mobile.ViewModels.Home;
+using Adventure.Mobile.Views.Home;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Adventure.Mobile

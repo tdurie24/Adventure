@@ -7,7 +7,7 @@ namespace Adventure.Contracts.Models
 {
     public class PriceDto
     {
-        public Guid PriceID { get; set; }
+        public Guid Id { get; set; }
         public decimal KidsPrice { get; set; }
         public decimal AdultsPrice { get; set; }
         public decimal SeniorCitizenPrice { get; set; }

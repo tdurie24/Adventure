@@ -14,6 +14,16 @@ namespace Adventure.Web.API.Services
         {
             CreateMap<Event, EventDto>();
             CreateMap<EventDto, Event>();
+            CreateMap<Image, ImageDto>();
+            CreateMap<ImageDto, Image>();
+            CreateMap<GeoCoordinateDto, GeoCoordinate>();
+            CreateMap<GeoCoordinate, GeoCoordinateDto>();
+            CreateMap<Location, LocationDto>();
+            CreateMap<LocationDto, Location>();
+            CreateMap<Price, PriceDto>();
+            CreateMap<PriceDto, Price>();
+            CreateMap<HolidayType, HolidayTypeDto>();
+            CreateMap<HolidayTypeDto, HolidayType>();
             CreateMap<HolidayDto, Holiday>();
             CreateMap<Holiday, HolidayDto>();
         }
