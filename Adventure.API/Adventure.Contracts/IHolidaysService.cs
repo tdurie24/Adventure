@@ -8,14 +8,14 @@ namespace Adventure.Contracts
 {
     public interface IHolidaysService
     {
-        Task<List<HolidayDto>> GetHolidays();
+        Task<List<HolidayDto>> GetHolidaysAsync();
 
-        Task<List<HolidayDto>> GetHolidays(LocationDto locationDto);
+        Task<List<HolidayDto>> GetHolidaysAsync(LocationDto locationDto);
 
-        Task<HolidayDto> GetHoliday(Guid id);
-        Task<string> CreateHoliday(HolidayDto holiday);
-        void UpdateHoliday(HolidayDto holiday);
-        Task DeleteHoliday(Guid id);
+        Task<HolidayDto> GetHolidayAsync(Guid id);
+        Task<string> CreateHolidayAsync(HolidayDto holiday);
+        Task UpdateHolidayAsync(HolidayDto holiday);
+        Task DeleteHolidayAsync(Guid id);
 
     }
 }

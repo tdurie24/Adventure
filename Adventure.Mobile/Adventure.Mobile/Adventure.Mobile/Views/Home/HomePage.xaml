@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Adventure.Mobile.Views.Home.HomePage"
+             Title="Home">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <CarouselView ItemsSource="{Binding Sections}" PeekAreaInsets="50">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="#cfd8dc">
+                                <Frame BorderColor="Gray" Margin="5" HasShadow="True" HeightRequest="450" VerticalOptions="CenterAndExpand">
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                        <BoxView HeightRequest="2" BackgroundColor="DarkSlateGray"/>
+                                        <Image Source="{Binding Image}" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" />
+                                        <!--<Label FormattedText="{Binding Content}" TextColor="Black" FontSize="18" Margin="16"/>
+                                        <Label Text="{Binding Emoji}" FontSize="128" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>-->
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+
+            <StackLayout>
+                <Grid Margin="20,35,20,20">
+                    <Label Text="The Grid has its Margin property set, to control the rendering position of the Grid." />
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

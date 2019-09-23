@@ -18,5 +18,6 @@ namespace Adventure.Contracts.Models
         public DateTime DateTo { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
+        public bool IsFeatured { get; set; }
     }
 }

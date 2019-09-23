@@ -28,7 +28,7 @@ namespace Adventure.Web.API.Controllers
                 {
                     return BadRequest();
                 }
-                var holidayId = await this.holidaysService.CreateHoliday(holiday);
+                var holidayId = await this.holidaysService.CreateHolidayAsync(holiday);
                 return !string.IsNullOrWhiteSpace(holidayId) ? Ok(holidayId) : (IActionResult)NotFound();
 
             }
@@ -44,7 +44,7 @@ namespace Adventure.Web.API.Controllers
         {
             try
             {
-                var holidays = await this.holidaysService.GetHolidays().ConfigureAwait(false);
+                var holidays = await this.holidaysService.GetHolidaysAsync().ConfigureAwait(false);
                 return Ok(holidays);
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace Adventure.Web.API.Controllers
         {
             try
             {
-                var em = await this.holidaysService.GetHoliday(id).ConfigureAwait(false);
+                var em = await this.holidaysService.GetHolidayAsync(id).ConfigureAwait(false);
                 return em != null ? Ok(em) : (IActionResult)NotFound();
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace Adventure.Web.API.Controllers
         {
             try
             {
-                this.holidaysService.DeleteHoliday(id);
+                this.holidaysService.DeleteHolidayAsync(id);
                 return NoContent();
             }
             catch (Exception ex)

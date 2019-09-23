@@ -159,6 +159,8 @@ namespace Adventure.Data.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("SourceURL");
+
                     b.HasKey("Id");
 
                     b.HasIndex("HolidayId");

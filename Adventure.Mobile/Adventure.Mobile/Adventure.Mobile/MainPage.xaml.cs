@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Adventure.Mobile.MenuItems;
 using Adventure.Mobile.Views;
+using Adventure.Mobile.Views.Home;
 using Xamarin.Forms;
 
 namespace Adventure.Mobile
@@ -18,8 +19,8 @@ namespace Adventure.Mobile
             // Here you can define title for item, 
             // icon on the left side, and page that you want to open after selection
             var page1 = new MasterPageItem() { Title = "Home", Icon = "HomeIcon.png", TargetType = typeof(HomePage) };
-            var page2 = new MasterPageItem() { Title = "Item 2", Icon = "itemIcon2.png", TargetType = typeof(TestPage2) };
-            var page3 = new MasterPageItem() { Title = "Item 3", Icon = "itemIcon3.png", TargetType = typeof(TestPage3) };
+            var page2 = new MasterPageItem() { Title = "Holidays", Icon = "itemIcon2.png", TargetType = typeof(TestPage2) };
+            var page3 = new MasterPageItem() { Title = "Events", Icon = "itemIcon3.png", TargetType = typeof(TestPage3) };
             //var page4 = new MasterPageItem() { Title = "Item 4", Icon = "itemIcon4.png", TargetType = typeof(TestPage1) };
             //var page5 = new MasterPageItem() { Title = "Item 5", Icon = "itemIcon5.png", TargetType = typeof(TestPage2) };
             //var page6 = new MasterPageItem() { Title = "Item 6", Icon = "itemIcon6.png", TargetType = typeof(TestPage3) };

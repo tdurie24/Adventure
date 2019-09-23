@@ -22,7 +22,7 @@ namespace Adventure.Services
             this.mapper = mapper;
         }
 
-        public async Task<string> CreateHoliday(HolidayDto holiday)
+        public async Task<string> CreateHolidayAsync(HolidayDto holiday)
         {
             try
             {
@@ -37,25 +37,25 @@ namespace Adventure.Services
             }
         }
 
-        public async Task DeleteHoliday(Guid id)
+        public async Task DeleteHolidayAsync(Guid id)
         {
             var holiday = await dbContext.Holidays.FindAsync(id).ConfigureAwait(false);
             dbContext.Holidays.Remove(holiday);
             await dbContext.SaveChangesAsync().ConfigureAwait(false);
         }
 
-        public async Task<HolidayDto> GetHoliday(Guid id)
+        public async Task<HolidayDto> GetHolidayAsync(Guid id)
         {
             var holiday = await dbContext.Holidays.FindAsync(id).ConfigureAwait(false);
             return this.mapper.Map<HolidayDto>(holiday);
         }
 
-        public async Task<List<HolidayDto>> GetHolidays()
+        public async Task<List<HolidayDto>> GetHolidaysAsync()
         {
             try
             {
                var holidayDtos = new List<HolidayDto>();
-               var holidays = await dbContext.Holidays.ToListAsync().ConfigureAwait(false);
+               var holidays = await dbContext.Holidays.Include(i=> i.Images).Include(l=> l.Location).Include(p=> p.Price).Include(h=>h.HolidayType).ToListAsync().ConfigureAwait(false);
                 foreach (var model in this.mapper.Map<List<HolidayDto>>(holidays))
                 {
                     holidayDtos.Add(model);
@@ -68,16 +68,41 @@ namespace Adventure.Services
             }
         }
 
-        public Task<List<HolidayDto>> GetHolidays(LocationDto locationDto)
+        public async Task<List<HolidayDto>> GetHolidaysAsync(LocationDto locationDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var holidayDtos = new List<HolidayDto>();
+                var holidays = await dbContext.Holidays.ToListAsync().ConfigureAwait(false);
+                var holidaysByLocation = holidays.Where(x => x.Location == this.mapper.Map<Location>(locationDto));
+                foreach (var model in this.mapper.Map<List<HolidayDto>>(holidaysByLocation))
+                {
+                    holidayDtos.Add(model);
+                }
+                return holidayDtos;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public void UpdateHoliday(HolidayDto holiday)
+        public async Task UpdateHolidayAsync(HolidayDto holiday)
         {
-            var h = this.mapper.Map<Holiday>(holiday);
-            this.dbContext.Holidays.Update(h);
-            dbContext.SaveChanges();
+            try
+            {
+                var h = this.mapper.Map<Holiday>(holiday);
+                this.dbContext.Holidays.Update(h);
+                await dbContext.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
+        
     }
 }
