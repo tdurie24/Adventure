@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.72" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Polly" Version="7.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.778476-pre1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1367" />
     <PackageReference Include="Xamarin.Forms.CarouselView" Version="2.3.0-pre2" />
@@ -41,6 +43,11 @@
     <EmbeddedResource Update="Views\TestPage3.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\Services\General\" />
+    <Folder Include="Services\General\" />
   </ItemGroup>
 
 </Project>

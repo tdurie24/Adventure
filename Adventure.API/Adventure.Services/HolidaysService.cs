@@ -44,6 +44,17 @@ namespace Adventure.Services
             await dbContext.SaveChangesAsync().ConfigureAwait(false);
         }
 
+        public async Task<List<HolidayDto>> GetFeaturedHolidaysAsync()
+        {
+            var holidayDtos = new List<HolidayDto>();
+            var holidays = await dbContext.Holidays.Include(i => i.Images).Include(l => l.Location).Include(p => p.Price).Include(h => h.HolidayType).Where(x => x.IsFeatured == true).OrderByDescending(x => x.DateUpdated).ToListAsync().ConfigureAwait(false);
+            foreach (var model in this.mapper.Map<List<HolidayDto>>(holidays))
+            {
+                holidayDtos.Add(model);
+            }
+            return holidayDtos;
+        }
+
         public async Task<HolidayDto> GetHolidayAsync(Guid id)
         {
             var holiday = await dbContext.Holidays.FindAsync(id).ConfigureAwait(false);
@@ -55,7 +66,7 @@ namespace Adventure.Services
             try
             {
                var holidayDtos = new List<HolidayDto>();
-               var holidays = await dbContext.Holidays.Include(i=> i.Images).Include(l=> l.Location).Include(p=> p.Price).Include(h=>h.HolidayType).ToListAsync().ConfigureAwait(false);
+               var holidays = await dbContext.Holidays.Include(i=> i.Images).Include(l=> l.Location).Include(p=> p.Price).Include(h=>h.HolidayType).OrderByDescending(x=> x.DateUpdated).ToListAsync().ConfigureAwait(false);
                 foreach (var model in this.mapper.Map<List<HolidayDto>>(holidays))
                 {
                     holidayDtos.Add(model);

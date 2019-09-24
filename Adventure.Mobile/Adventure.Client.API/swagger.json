@@ -1,0 +1,289 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Adventure"
+  },
+  "paths": {
+    "/api/events": {
+      "get": {
+        "tags": [ "Events" ],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [],
+        "parameters": [],
+        "responses": { "200": { "description": "Success" } }
+      },
+      "post": {
+        "tags": [ "Events" ],
+        "operationId": "Post",
+        "consumes": [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "eventModel",
+            "in": "body",
+            "required": false,
+            "schema": { "$ref": "#/definitions/EventDto" }
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      },
+      "delete": {
+        "tags": [ "Events" ],
+        "operationId": "Delete",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
+    "/api/events/{id}": {
+      "get": {
+        "tags": [ "Events" ],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
+    "/api/holidays": {
+      "get": {
+        "tags": [ "Holidays" ],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [],
+        "parameters": [],
+        "responses": { "200": { "description": "Success" } }
+      },
+      "post": {
+        "tags": [ "Holidays" ],
+        "operationId": "Post",
+        "consumes": [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "holiday",
+            "in": "body",
+            "required": false,
+            "schema": { "$ref": "#/definitions/HolidayDto" }
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      },
+      "delete": {
+        "tags": [ "Holidays" ],
+        "operationId": "Delete",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
+    "/api/holidays/{id}": {
+      "get": {
+        "tags": [ "Holidays" ],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    }
+  },
+  "definitions": {
+    "EventDto": {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "$ref": "#/definitions/PriceDto" },
+        "location": { "$ref": "#/definitions/LocationDto" },
+        "coordinator": { "$ref": "#/definitions/CoordinatorDto" },
+        "images": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/ImageDto" }
+        },
+        "fromDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "toDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "modifiedDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "PriceDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "kidsPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "adultsPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "seniorCitizenPrice": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "LocationDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "surburb": { "type": "string" },
+        "town": { "type": "string" },
+        "province": { "type": "string" },
+        "country": { "type": "string" },
+        "gpsLocation": { "$ref": "#/definitions/GeoCoordinateDto" }
+      }
+    },
+    "CoordinatorDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "website": { "type": "string" },
+        "cellPhone": { "type": "string" },
+        "phoneNumber": { "type": "string" }
+      }
+    },
+    "ImageDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": { "type": "string" },
+        "base64": { "type": "string" },
+        "sourceURL": { "type": "string" }
+      }
+    },
+    "GeoCoordinateDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "HolidayDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": { "type": "string" },
+        "images": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/ImageDto" }
+        },
+        "price": { "$ref": "#/definitions/PriceDto" },
+        "location": { "$ref": "#/definitions/LocationDto" },
+        "holidayType": { "$ref": "#/definitions/HolidayTypeDto" },
+        "shortDescription": { "type": "string" },
+        "longDescription": { "type": "string" },
+        "dateFrom": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "dateTo": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "dateCreated": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "dateUpdated": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "isFeatured": { "type": "boolean" }
+      }
+    },
+    "HolidayTypeDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": { "type": "string" }
+      }
+    }
+  }
+}

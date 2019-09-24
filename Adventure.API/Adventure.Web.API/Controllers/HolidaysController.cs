@@ -54,6 +54,23 @@ namespace Adventure.Web.API.Controllers
             }
         }
 
+        //[HttpGet]
+        //public async Task<IActionResult> GetFeaturedHolidays()
+        //{
+        //    try
+        //    {
+        //        var holidays = await this.holidaysService.GetFeaturedHolidaysAsync().ConfigureAwait(false);
+        //        return Ok(holidays);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //        throw;
+        //    }
+        //}
+
+
+
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> Get(Guid id)

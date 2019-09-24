@@ -10,6 +10,8 @@ namespace Adventure.Contracts
     {
         Task<List<HolidayDto>> GetHolidaysAsync();
 
+        Task<List<HolidayDto>> GetFeaturedHolidaysAsync();
+
         Task<List<HolidayDto>> GetHolidaysAsync(LocationDto locationDto);
 
         Task<HolidayDto> GetHolidayAsync(Guid id);

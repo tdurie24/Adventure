@@ -1,13 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Adventure.API",
-    "\\Adventure.Mobile\\Adventure.Mobile.Repository\\Contracts",
-    "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile",
-    "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile\\Models",
-    "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile\\Views",
-    "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile\\Views\\Home"
+    "\\Adventure.API"
   ],
-  "SelectedNode": "\\.gitattributes",
   "PreviewInSolutionExplorer": false
 }
