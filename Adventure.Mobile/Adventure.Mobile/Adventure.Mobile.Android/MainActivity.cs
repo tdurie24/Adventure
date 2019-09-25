@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Adventure.Mobile.Services.General;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Prism;
@@ -26,6 +27,7 @@ namespace Adventure.Mobile.Droid
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register any platform specific implementations
+            containerRegistry.Register<IAppSettingService, AppSettingService>();
         }
     }
 }

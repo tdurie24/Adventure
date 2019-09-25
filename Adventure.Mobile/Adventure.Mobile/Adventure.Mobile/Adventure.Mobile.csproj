@@ -46,7 +46,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Services\General\" />
-    <Folder Include="Services\General\" />
   </ItemGroup>
 
   <ItemGroup>
