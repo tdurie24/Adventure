@@ -8,10 +8,10 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <CarouselView ItemsSource="{Binding Sections}" PeekAreaInsets="50">
+                <CarouselView ItemsSource="{Binding Sections}" PeekAreaInsets="50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout BackgroundColor="#cfd8dc">
+                            <StackLayout BackgroundColor="#2C2E31">
                                 <Frame BorderColor="Gray" Margin="5" HasShadow="True" HeightRequest="450" VerticalOptions="CenterAndExpand">
                                     <StackLayout>
                                         <Label Text="{Binding Name}" TextColor="Black" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
@@ -27,11 +27,11 @@
                 </CarouselView>
             </StackLayout>
 
-            <StackLayout>
+            <!--<StackLayout>
                 <Grid Margin="20,35,20,20">
                     <Label Text="The Grid has its Margin property set, to control the rendering position of the Grid." />
                 </Grid>
-            </StackLayout>
+            </StackLayout>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

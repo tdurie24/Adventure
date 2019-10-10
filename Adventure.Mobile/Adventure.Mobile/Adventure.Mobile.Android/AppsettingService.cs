@@ -15,7 +15,7 @@ namespace Adventure.Mobile.Droid
             using (var asset = this.context.Assets.Open(filename))
             using (var streamReader = new StreamReader(asset))
             {
-                return await streamReader.ReadToEndAsync();
+                return await streamReader.ReadToEndAsync().ConfigureAwait(false);
             }
         }
     }
