@@ -57,7 +57,7 @@ namespace Adventure.Services
 
         public async Task<HolidayDto> GetHolidayAsync(Guid id)
         {
-            var holiday = await dbContext.Holidays.FindAsync(id).ConfigureAwait(false);
+            var holiday = await dbContext.Holidays.Include(i=> i.Images).Include(l=> l.Location).Include(p=>p.Price).Include(h=> h.HolidayType).Where(x=> x.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
             return this.mapper.Map<HolidayDto>(holiday);
         }
 
@@ -73,9 +73,9 @@ namespace Adventure.Services
                 }
                 return holidayDtos;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
