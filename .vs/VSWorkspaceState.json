@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Adventure.IdentityServer"
+    "\\Adventure.API\\Adventure.Web.API\\Controllers"
   ],
-  "SelectedNode": "\\Adventure.IdentityServer\\Adventure.IdentityServer.sln",
+  "SelectedNode": "\\Adventure-Web",
   "PreviewInSolutionExplorer": false
 }
