@@ -2,8 +2,8 @@
 @model LoginViewModel
 
 <div class="login-page">
-    <div class="page-header">
-        <h1>Login</h1>
+    <div class="page-header  text-center">
+        <h1>Adventure Login</h1>
     </div>
 
     <partial name="_ValidationSummary" />
@@ -12,12 +12,12 @@
 
         @if (Model.EnableLocalLogin)
         {
-            <div class="col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+            <div class="col-sm-12">
+                @*<div class="panel panel-default">*@
+                    @*<div class="panel-heading">
                         <h3 class="panel-title">Local Login</h3>
-                    </div>
-                    <div class="panel-body">
+                    </div>*@
+                    @*<div class="panel-body">*@
 
                         <form asp-route="Login">
                             <input type="hidden" asp-for="ReturnUrl" />
@@ -44,39 +44,85 @@
                                     <button class="btn btn-primary" name="button" value="login">Login</button>
                                     <button class="btn btn-default" name="button" value="cancel">Cancel</button>
                                 </div>
+
+
+                                <div>
+                                    <ul class="list-inline">
+                                        @foreach (var provider in Model.VisibleExternalProviders)
+                                        {
+                                            if (provider.DisplayName == "Facebook")
+                                            {
+                                                <li>
+                                                    <a class="btn btn-default"
+                                                       asp-controller="External"
+                                                       asp-action="Challenge"
+                                                       asp-route-provider="@provider.AuthenticationScheme"
+                                                       asp-route-returnUrl="@Model.ReturnUrl">
+                                                            @provider.DisplayName
+                                                    </a>
+                                                </li>
+                                            }
+                                            else if (provider.DisplayName == "Google")
+                                            {
+                                                <li>
+                                                    <a class="btn btn-default"
+                                                       asp-controller="External"
+                                                       asp-action="Challenge"
+                                                       asp-route-provider="@provider.AuthenticationScheme"
+                                                       asp-route-returnUrl="@Model.ReturnUrl">
+                                                        @provider.DisplayName
+                                                    </a>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li>
+                                                    <a class="btn btn-default"
+                                                       asp-controller="External"
+                                                       asp-action="Challenge"
+                                                       asp-route-provider="@provider.AuthenticationScheme"
+                                                       asp-route-returnUrl="@Model.ReturnUrl">
+                                                        @provider.DisplayName
+                                                    </a>
+                                                </li>
+                                            }
+
+                                        }
+                                    </ul>
+                                </div>
                             </fieldset>
                         </form>
                     </div>
-                </div>
-            </div>
+                @*</div>*@
+            @*</div>*@
         }
 
-        @if (Model.VisibleExternalProviders.Any())
-        {
-            <div class="col-md-6 col-sm-6 external-providers">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">External Login</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-inline">
-                            @foreach (var provider in Model.VisibleExternalProviders)
-                            {
-                                <li>
-                                    <a class="btn btn-default"
-                                       asp-controller="External"
-                                       asp-action="Challenge"
-                                       asp-route-provider="@provider.AuthenticationScheme"
-                                       asp-route-returnUrl="@Model.ReturnUrl">
-                                        @provider.DisplayName
-                                    </a>
-                                </li>
-                            }
-                        </ul>
+        @*@if (Model.VisibleExternalProviders.Any())
+            {
+                <div class="col-md-6 col-sm-6 external-providers">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">External Login</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-inline">
+                                @foreach (var provider in Model.VisibleExternalProviders)
+                                {
+                                    <li>
+                                        <a class="btn btn-default"
+                                           asp-controller="External"
+                                           asp-action="Challenge"
+                                           asp-route-provider="@provider.AuthenticationScheme"
+                                           asp-route-returnUrl="@Model.ReturnUrl">
+                                            @provider.DisplayName
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }*@
 
         @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
         {

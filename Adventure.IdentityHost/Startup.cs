@@ -37,6 +37,12 @@ namespace Adventure.IdentityHost
                     options.ClientId = "<insert here>";
                     options.ClientSecret = "<insert here>";
                 })
+                .AddFacebook("Facebook", options => {
+                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
+                    options.ClientId = "<insert here>";
+                    options.ClientSecret = "<insert here>";
+                })
                 .AddOpenIdConnect("oidc", "Demo IdentityServer", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
