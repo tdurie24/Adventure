@@ -2,12 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Adventure.API",
-    "\\Adventure.Mobile\\Adventure.Mobile.Repository\\Contracts",
+    "\\Adventure.Mobile",
     "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile",
     "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile\\Models",
     "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile\\Views",
     "\\Adventure.Mobile\\Adventure.Mobile\\Adventure.Mobile\\Views\\Home"
   ],
-  "SelectedNode": "\\.gitattributes",
+  "SelectedNode": "\\Adventure.Mobile\\Adventure.Mobile.sln",
   "PreviewInSolutionExplorer": false
 }
