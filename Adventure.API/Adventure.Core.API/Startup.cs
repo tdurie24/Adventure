@@ -56,6 +56,8 @@ namespace Adventure.Core.API
 
             app.UseAuthorization();
 
+            app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
