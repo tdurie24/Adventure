@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Adventure.Contracts.Models;
+using Adventure.Domain.Entities;
+using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Adventure.Contracts.Models;
-using Adventure.Domain.Entities;
-using AutoMapper;
 
-namespace Adventure.Web.API.Services
+namespace Adventure.Core.API.Services
 {
     public class MappingProfile : Profile
     {

@@ -37,6 +37,18 @@ namespace Adventure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "HolidayTypes",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HolidayTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Prices",
                 columns: table => new
                 {
@@ -111,24 +123,93 @@ namespace Adventure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Holidays",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    PriceId = table.Column<Guid>(nullable: true),
+                    LocationId = table.Column<Guid>(nullable: true),
+                    HolidayTypeId = table.Column<Guid>(nullable: true),
+                    ShortDescription = table.Column<string>(nullable: true),
+                    LongDescription = table.Column<string>(nullable: true),
+                    DateFrom = table.Column<DateTime>(nullable: false),
+                    DateTo = table.Column<DateTime>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateUpdated = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Holidays", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Holidays_HolidayTypes_HolidayTypeId",
+                        column: x => x.HolidayTypeId,
+                        principalTable: "HolidayTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Holidays_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Holidays_Prices_PriceId",
+                        column: x => x.PriceId,
+                        principalTable: "Prices",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Images",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Base64 = table.Column<string>(nullable: true),
-                    EventId = table.Column<Guid>(nullable: true)
+                    SourceURL = table.Column<string>(nullable: true),
+                    HolidayId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Images_Events_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Events",
+                        name: "FK_Images_Holidays_HolidayId",
+                        column: x => x.HolidayId,
+                        principalTable: "Holidays",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "EventImage",
+                columns: table => new
+                {
+                    EventId = table.Column<Guid>(nullable: false),
+                    ImageId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventImage", x => new { x.EventId, x.ImageId });
+                    table.ForeignKey(
+                        name: "FK_EventImage_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EventImage_Images_ImageId",
+                        column: x => x.ImageId,
+                        principalTable: "Images",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventImage_ImageId",
+                table: "EventImage",
+                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_CoordinatorId",
@@ -146,9 +227,24 @@ namespace Adventure.Data.Migrations
                 column: "PriceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_EventId",
+                name: "IX_Holidays_HolidayTypeId",
+                table: "Holidays",
+                column: "HolidayTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Holidays_LocationId",
+                table: "Holidays",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Holidays_PriceId",
+                table: "Holidays",
+                column: "PriceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_HolidayId",
                 table: "Images",
-                column: "EventId");
+                column: "HolidayId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Locations_GpsLocationId",
@@ -159,13 +255,22 @@ namespace Adventure.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Images");
+                name: "EventImage");
 
             migrationBuilder.DropTable(
                 name: "Events");
 
             migrationBuilder.DropTable(
+                name: "Images");
+
+            migrationBuilder.DropTable(
                 name: "Coordinators");
+
+            migrationBuilder.DropTable(
+                name: "Holidays");
+
+            migrationBuilder.DropTable(
+                name: "HolidayTypes");
 
             migrationBuilder.DropTable(
                 name: "Locations");

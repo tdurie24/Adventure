@@ -4,14 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Adventure.Contracts;
 using Adventure.Contracts.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Adventure.Web.API.Controllers
+namespace Adventure.Core.API.Controllers.V1
 {
-
-    [Route("api/holidays")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class HolidaysController : Controller
+    public class HolidaysController : ControllerBase
     {
         private readonly IHolidaysService holidaysService;
         public HolidaysController(IHolidaysService holidaysService)

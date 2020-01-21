@@ -4,15 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Adventure.Contracts;
 using Adventure.Contracts.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Adventure.Web.API.Controllers
+namespace Adventure.Core.API.Controllers.V1
 {
-
-
-    [Route("api/events")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class EventsController : Controller
+    public class EventsController : ControllerBase
     {
         private readonly IEventsServices eventsServices;
         public EventsController(IEventsServices eventsServices)
@@ -25,8 +24,9 @@ namespace Adventure.Web.API.Controllers
         {
             try
             {
-                if(eventModel == null){
-                   return BadRequest();
+                if (eventModel == null)
+                {
+                    return BadRequest();
                 }
                 var eventID = await this.eventsServices.CreateEvent(eventModel);
                 return !string.IsNullOrWhiteSpace(eventID) ? Ok(eventID) : (IActionResult)NotFound();
