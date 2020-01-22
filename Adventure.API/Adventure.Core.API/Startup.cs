@@ -31,6 +31,14 @@ namespace Adventure.Core.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication("Bearer")
+                    .AddIdentityServerAuthentication(options =>
+                    {
+                        options.Authority = "http://localhost:5000/";
+                        options.ApiName = "AdventureAPI";
+                        options.RequireHttpsMetadata = false;
+
+                    });
             services.AddControllers();
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "Adventure", Version = "v1" }));
             var mappingConfig = new MapperConfiguration(mc => mc.AddProfile(new MappingProfile()));
@@ -53,6 +61,8 @@ namespace Adventure.Core.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

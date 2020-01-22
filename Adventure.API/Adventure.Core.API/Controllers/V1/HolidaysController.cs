@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Adventure.Contracts;
 using Adventure.Contracts.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Adventure.Core.API.Controllers.V1
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class HolidaysController : ControllerBase
