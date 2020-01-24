@@ -15,24 +15,30 @@ namespace Adventure.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Adventure.Domain.Entities.Coordinator", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CellPhone");
+                    b.Property<string>("CellPhone")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Website");
+                    b.Property<string>("Website")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -42,25 +48,35 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.Event", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("CoordinatorId");
+                    b.Property<Guid?>("CoordinatorId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("FromDate");
+                    b.Property<DateTime>("FromDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("LocationId");
+                    b.Property<Guid?>("LocationId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("ModifiedDate");
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("PriceId");
+                    b.Property<Guid?>("PriceId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("ToDate");
+                    b.Property<DateTime>("ToDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -75,9 +91,11 @@ namespace Adventure.Data.Migrations
 
             modelBuilder.Entity("Adventure.Domain.Entities.EventImage", b =>
                 {
-                    b.Property<Guid>("EventId");
+                    b.Property<Guid>("EventId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ImageId");
+                    b.Property<Guid>("ImageId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("EventId", "ImageId");
 
@@ -89,11 +107,14 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.GeoCoordinate", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Latitude");
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("Longitude");
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -103,27 +124,38 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.Holiday", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DateCreated");
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateFrom");
+                    b.Property<DateTime>("DateFrom")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateTo");
+                    b.Property<DateTime>("DateTo")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateUpdated");
+                    b.Property<DateTime>("DateUpdated")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("HolidayTypeId");
+                    b.Property<Guid?>("HolidayTypeId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("LocationId");
+                    b.Property<Guid?>("LocationId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("LongDescription");
+                    b.Property<string>("LongDescription")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("PriceId");
+                    b.Property<Guid?>("PriceId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ShortDescription");
+                    b.Property<string>("ShortDescription")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -139,9 +171,11 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.HolidayType", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -151,15 +185,20 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.Image", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Base64");
+                    b.Property<string>("Base64")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("HolidayId");
+                    b.Property<Guid?>("HolidayId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SourceURL");
+                    b.Property<string>("SourceURL")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -171,17 +210,23 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.Location", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Country");
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("GpsLocationId");
+                    b.Property<Guid?>("GpsLocationId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Province");
+                    b.Property<string>("Province")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Surburb");
+                    b.Property<string>("Surburb")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Town");
+                    b.Property<string>("Town")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -193,13 +238,17 @@ namespace Adventure.Data.Migrations
             modelBuilder.Entity("Adventure.Domain.Entities.Price", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("AdultsPrice");
+                    b.Property<decimal>("AdultsPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("KidsPrice");
+                    b.Property<decimal>("KidsPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("SeniorCitizenPrice");
+                    b.Property<decimal>("SeniorCitizenPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -226,12 +275,14 @@ namespace Adventure.Data.Migrations
                     b.HasOne("Adventure.Domain.Entities.Event", "Event")
                         .WithMany("EventImages")
                         .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Adventure.Domain.Entities.Image", "Image")
                         .WithMany()
                         .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Adventure.Domain.Entities.Holiday", b =>
@@ -251,7 +302,7 @@ namespace Adventure.Data.Migrations
 
             modelBuilder.Entity("Adventure.Domain.Entities.Image", b =>
                 {
-                    b.HasOne("Adventure.Domain.Entities.Holiday")
+                    b.HasOne("Adventure.Domain.Entities.Holiday", null)
                         .WithMany("Images")
                         .HasForeignKey("HolidayId");
                 });
