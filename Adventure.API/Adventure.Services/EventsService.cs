@@ -30,8 +30,9 @@ namespace Adventure.Services
                 await dbContext.SaveChangesAsync().ConfigureAwait(false);
                 return e.EventId.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ex.ToString();
                 throw;
             }
 
@@ -49,8 +50,9 @@ namespace Adventure.Services
                 }
                 return eventDtos;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ex.ToString();
                 throw;
             }
         }
