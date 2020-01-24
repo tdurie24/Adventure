@@ -37,7 +37,8 @@ namespace Adventure.IdentityServer4
             var connectionString = Configuration.GetConnectionString("AdventureIdentityConection");
             var migrationAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
-            services.AddRazorPages();
+            //services.AddRazorPages();
+            services.AddControllersWithViews();
             services.AddIdentityServer()
                     .AddDeveloperSigningCredential()
                     /// store resources and clients
@@ -82,9 +83,15 @@ namespace Adventure.IdentityServer4
             app.UseIdentityServer();
             //app.UseAuthorization();
 
+            ////app.UseEndpoints(endpoints =>
+            ////{
+            ////    endpoints.MapRazorPages();
+            ////});
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
 
